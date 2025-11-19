@@ -14,7 +14,7 @@ camera.sharpness = 50
 
 sleep(2)
 
-camera.capture('/home/b03-501/laba228/get/light/fil_blue2.jpeg')
+camera.capture('/home/b03-501/laba228/get/light/Kayf/Fil_blue.jpeg')
 print ("фото сохранено")
 
 camera.close()
