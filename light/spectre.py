@@ -7,6 +7,7 @@ Created on Mon Nov 24 16:35:09 2025
 
 import lightFunctions as j
 import matplotlib.pyplot as plt
+import numpy as np
 
 data = j.readIntensity("Kayf\Hg_white.jpeg", "Kayf\plot_white.jpeg", "mercury", "white")
 data_white = j.readIntensity("Kayf\Fil_white.jpeg", "Kayf\plot_filwhite.jpeg", "filament", "white")
@@ -16,17 +17,22 @@ data_green = j.readIntensity("Kayf\Fil_green.jpeg", "Kayf\plot_green.jpeg", "fil
 data_blue = j.readIntensity("Kayf\Fil_blue.jpeg", "Kayf\plot_blue.jpeg", "filament", "blue")
 
 
+pixels = np.arange(len(data_white))  # массив пикселей [0, 1, 2, ..., N-1]
+wavelengths = 250 + (950 - 250) * pixels / 600  # линейное преобразование
 
 plt.figure()
 plt.title("График интенсивностей света лампы накаливания, отражённого от цветных поверхностей")
-plt.xlabel("Относительный номер пикселя: 0 = 400 нм, 600 = 780 нм")
-plt.ylabel ("Яркость")
+plt.xlabel("Длина волны, нм")
+plt.ylabel("Яркость")
 
-#plt.xlim(400, 1000)
-plt.plot(data_white, 'k')
-plt.plot(data_red, 'r')
-plt.plot(data_yellow, 'y')
-plt.plot(data_green, 'g')
-plt.plot(data_blue, 'b')
+# Используем wavelengths вместо pixels
+plt.plot(wavelengths, data_white, 'k', label='white')
+plt.plot(wavelengths, data_red, 'r', label='red')
+plt.plot(wavelengths, data_yellow, 'y', label='yellow')
+plt.plot(wavelengths, data_green, 'g', label='green')
+plt.plot(wavelengths, data_blue, 'b', label='blue')
 
+plt.xlim(250, 950)  # ограничиваем по длинам волн
+plt.legend()
+plt.grid(True, alpha=0.3)
 plt.show()
