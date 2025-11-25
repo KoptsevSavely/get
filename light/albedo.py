@@ -35,8 +35,8 @@ for i in range (len(data)):
     alb_blue[i] = data_blue[i]/data_white[i]
 
 plt.figure()
-plt.xlim (300, 900)
-plt.ylim (0,1.3)
+plt.xlim (300, 800)
+plt.ylim (0,1.05)
 
 plt.title("График альбедо цветных поверхностей")
 plt.xlabel("Длина волны, нм")
