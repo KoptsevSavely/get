@@ -9,12 +9,12 @@ import lightFunctions as j
 import matplotlib.pyplot as plt
 import numpy as np
 
-data = j.readIntensity("Kayf\Hg_white.jpeg", "Kayf\plot_white.jpeg", "mercury", "white")
-data_white = j.readIntensity("Kayf\Fil_white.jpeg", "Kayf\plot_filwhite.jpeg", "filament", "white")
-data_red = j.readIntensity("Kayf\Fil_red.jpeg", "Kayf\plot_red.jpeg", "filament", "red")
-data_yellow = j.readIntensity("Kayf\Fil_yellow.jpeg", "Kayf\plot_yellow.jpeg", "filament", "yellow")
-data_green = j.readIntensity("Kayf\Fil_green.jpeg", "Kayf\plot_green.jpeg", "filament", "green")
-data_blue = j.readIntensity("Kayf\Fil_blue.jpeg", "Kayf\plot_blue.jpeg", "filament", "blue")
+data = j.readIntensity("Hg_white.jpeg", "plot_white.jpeg", "mercury", "white")
+data_white = j.readIntensity("Fil_white.jpeg", "plot_filwhite.jpeg", "filament", "white")
+data_red = j.readIntensity("Fil_red.jpeg", "plot_red.jpeg", "filament", "red")
+data_yellow = j.readIntensity("Fil_yellow.jpeg", "plot_yellow.jpeg", "filament", "yellow")
+data_green = j.readIntensity("Fil_green.jpeg", "plot_green.jpeg", "filament", "green")
+data_blue = j.readIntensity("Fil_blue.jpeg", "plot_blue.jpeg", "filament", "blue")
 
 
 pixels = np.arange(len(data_white))  # массив пикселей [0, 1, 2, ..., N-1]
